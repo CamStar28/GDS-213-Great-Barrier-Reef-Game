@@ -8,12 +8,16 @@ public class playerController : MonoBehaviour
     public Rigidbody playerBody;
     public GameObject cameraFlash;
 
+    public GameObject fishipediaMenu;
+    public bool isFishipediaOpen; 
+
     public bool isFacingRight; 
     
     // Start is called before the first frame update
     void Start()
     {
         isFacingRight = true; 
+        isFishipediaOpen = false;
     }
 
     // Update is called once per frame
@@ -81,6 +85,20 @@ public class playerController : MonoBehaviour
             {
                 cameraFlash.transform.position = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if(isFishipediaOpen == false) 
+            {
+                fishipediaMenu.SetActive(true);
+                isFishipediaOpen = true;
+            } else
+            {
+                fishipediaMenu.SetActive(false);
+                isFishipediaOpen = false;
+            }
+
         }
     }
 }

@@ -23,8 +23,7 @@ public class cameraController : MonoBehaviour
     {
         if(other.gameObject.tag == "FishObject")
         {
-            potatoCodImage.SetActive(true);
-            Debug.Log("fish wit da LIPS");
+            //other.gameObject.GetComponent<>
         }
     }
 }
