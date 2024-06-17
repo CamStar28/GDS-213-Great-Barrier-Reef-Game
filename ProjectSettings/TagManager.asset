@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - FishObject
+  - PotatoCod
+  - MantaRay
+  - GiantClam
+  - MaoriWrasse
+  - WhaleShark
+  - Clownfish
+  - GreenTurtle
+  - HumpbackWhale
   layers:
   - Default
   - TransparentFX

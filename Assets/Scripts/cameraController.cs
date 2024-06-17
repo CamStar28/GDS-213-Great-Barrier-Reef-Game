@@ -21,9 +21,10 @@ public class cameraController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "FishObject")
+        if(other.gameObject.tag == "PotatoCod")
         {
-            //other.gameObject.GetComponent<>
+            potatoCodImage.SetActive(true);
+            Debug.Log("fish wit da LIPS"); 
         }
     }
 }
