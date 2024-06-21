@@ -5,7 +5,9 @@ using UnityEngine;
 public class cameraController : MonoBehaviour
 {
 
-    public GameObject potatoCodImage; 
+    public GameObject potatoCodImage;
+
+    public GameObject potatoCodBio; 
     
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,8 @@ public class cameraController : MonoBehaviour
         if(other.gameObject.tag == "PotatoCod")
         {
             potatoCodImage.SetActive(true);
-            Debug.Log("fish wit da LIPS"); 
+            Debug.Log("fish wit da LIPS");
+            potatoCodBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
         }
     }
 }

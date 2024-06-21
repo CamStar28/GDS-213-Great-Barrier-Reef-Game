@@ -5,8 +5,10 @@ using UnityEngine;
 public class fishBioController : MonoBehaviour
 {
 
+    public GameObject bioGroup;
     public GameObject buttonGroup;
-    public GameObject bioGroup; 
+    public GameObject lockedGroup;
+    public GameObject unlockedGroup; 
     
     // Start is called before the first frame update
     void Start()
@@ -24,5 +26,11 @@ public class fishBioController : MonoBehaviour
     {
         buttonGroup.SetActive(false);
         bioGroup.SetActive(true); 
+    }
+
+    public void UnlockBio()
+    {
+        unlockedGroup.SetActive(true);
+        lockedGroup.SetActive(false);
     }
 }
