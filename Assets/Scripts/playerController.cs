@@ -28,52 +28,52 @@ public class playerController : MonoBehaviour
     {
         if (gameIsPaused == false)
         {
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
                 playerBody.velocity = new Vector3(0, 3, 0);
                 //Debug.Log("going up?"); 
             }
 
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
                 playerBody.velocity = new Vector3(5, -0.5f, 0);
                 isFacingRight = true;
                 //Debug.Log("right away"); 
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
                 playerBody.velocity = new Vector3(-5, -0.5f, 0);
                 isFacingRight = false;
                 //Debug.Log("the radical left");
             }
 
-            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
                 playerBody.velocity = new Vector3(5, 3, 0);
                 isFacingRight = true;
                 //camera flash won't spawn with this input combination specifically????
             }
 
-            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
                 playerBody.velocity = new Vector3(-5, 3, 0);
                 isFacingRight = false;
             }
 
-            if (Input.GetKey(KeyCode.DownArrow))
+            if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
                 playerBody.velocity = new Vector3(0, -5, 0);
                 //Debug.Log("down"); 
             }
 
-            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
                 playerBody.velocity = new Vector3(5, -5, 0);
                 isFacingRight = true;
             }
 
-            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow))
+            if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
                 playerBody.velocity = new Vector3(-5, -5, 0);
                 isFacingRight = false;

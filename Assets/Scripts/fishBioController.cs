@@ -33,4 +33,10 @@ public class fishBioController : MonoBehaviour
         unlockedGroup.SetActive(true);
         lockedGroup.SetActive(false);
     }
+
+    public void HideBio()
+    {
+        buttonGroup.SetActive(true);
+        bioGroup.SetActive(false);
+    }
 }
