@@ -4,10 +4,18 @@ using UnityEngine;
 
 public class targetRandomiser : MonoBehaviour
 {
+
+    public float[] xPositions;
+    public float[] yPositions;
+
+    private int randomNumber; 
+    
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), 0);
+        randomNumber = Random.Range(0, xPositions.Length);
+
+        transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
     }
 
     // Update is called once per frame
@@ -20,7 +28,9 @@ public class targetRandomiser : MonoBehaviour
     {
         if (other.gameObject.tag == gameObject.tag)
         {
-            transform.position = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), 0);
+            randomNumber = Random.Range(0, xPositions.Length);
+
+            transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
         }
 
     }

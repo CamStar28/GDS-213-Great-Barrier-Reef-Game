@@ -39,6 +39,8 @@ public class playerController : MonoBehaviour
                 playerBody.velocity = new Vector3(5, -0.5f, 0);
                 isFacingRight = true;
                 //Debug.Log("right away"); 
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceRight();
             }
 
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
@@ -46,19 +48,24 @@ public class playerController : MonoBehaviour
                 playerBody.velocity = new Vector3(-5, -0.5f, 0);
                 isFacingRight = false;
                 //Debug.Log("the radical left");
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceLeft();
             }
 
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
                 playerBody.velocity = new Vector3(5, 3, 0);
                 isFacingRight = true;
-                //camera flash won't spawn with this input combination specifically????
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceRight();
             }
 
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
                 playerBody.velocity = new Vector3(-5, 3, 0);
                 isFacingRight = false;
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceLeft();
             }
 
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
@@ -71,12 +78,16 @@ public class playerController : MonoBehaviour
             {
                 playerBody.velocity = new Vector3(5, -5, 0);
                 isFacingRight = true;
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceRight();
             }
 
             if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
                 playerBody.velocity = new Vector3(-5, -5, 0);
                 isFacingRight = false;
+
+                cameraFlash.GetComponent<cameraController>().SpriteFaceLeft();
             }
 
             if (Input.GetKeyDown(KeyCode.Space))
@@ -123,5 +134,7 @@ public class playerController : MonoBehaviour
                 gameIsPaused = false;
             }
         }
+
+
     }
 }
