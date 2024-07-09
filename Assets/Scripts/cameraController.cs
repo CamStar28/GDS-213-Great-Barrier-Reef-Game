@@ -7,9 +7,21 @@ public class cameraController : MonoBehaviour
 
     public GameObject potatoCodImage;
     public GameObject greenTurtleImage;
+    public GameObject giantClamImage;
+    public GameObject whaleSharkImage;
+    public GameObject maoriWrasseImage;
+    public GameObject clownfishImage;
+    public GameObject humpbackWhaleImage;
+    public GameObject mantaRayImage;
 
     public GameObject potatoCodBio; 
     public GameObject greenTurtleBio;
+    public GameObject giantClamBio;
+    public GameObject whaleSharkBio;
+    public GameObject maoriWrasseBio;
+    public GameObject clownfishBio;
+    public GameObject humpbackWhaleBio;
+    public GameObject mantaRayBio;
 
     public SpriteRenderer flashRenderer; 
     
@@ -56,6 +68,26 @@ public class cameraController : MonoBehaviour
 
             greenTurtleBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+        } else if (other.gameObject.tag == "MaoriWrasse")
+        {
+            maoriWrasseImage.SetActive(true);
+
+            maoriWrasseBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
+        } else if (other.gameObject.tag == "GiantClam")
+        {
+            giantClamImage.SetActive(true);
+
+            giantClamBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+        } else if (other.gameObject.tag == "Clownfish")
+        {
+            clownfishImage.SetActive(true);
+
+            clownfishBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+        } else if (other.gameObject.tag == "MantaRay")
+        {
+            mantaRayImage.SetActive(true);
+
+            mantaRayBio.gameObject.GetComponent<fishBioController>().UnlockBio();
         }
     }
 

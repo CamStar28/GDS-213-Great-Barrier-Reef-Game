@@ -23,9 +23,4 @@ public class greenTurtleScript : MonoBehaviour
 
         path.destination = target.position;
     }
-
-    public void RandomiseTarget()
-    {
-        target.position = new Vector3(Random.Range(-90, 90), Random.Range(-90, 90), 0);
-    }
 }
