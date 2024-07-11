@@ -88,6 +88,16 @@ public class cameraController : MonoBehaviour
             mantaRayImage.SetActive(true);
 
             mantaRayBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+        } else if (other.gameObject.tag == "WhaleShark")
+        {
+            whaleSharkImage.SetActive(true);
+
+            whaleSharkBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
+        } else if (other.gameObject.tag == "HumpbackWhale")
+        {
+            humpbackWhaleImage.SetActive(true);
+
+            humpbackWhaleBio.gameObject.GetComponent<fishBioController>().UnlockBio();
         }
     }
 
