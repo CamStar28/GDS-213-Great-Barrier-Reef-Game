@@ -8,12 +8,14 @@ public class targetRandomiser : MonoBehaviour
     public float[] xPositions;
     public float[] yPositions;
 
-    private int randomNumber; 
+    private int randomNumber;
+    private int previousRandNum; 
     
     // Start is called before the first frame update
     void Start()
     {
         randomNumber = Random.Range(0, xPositions.Length);
+        previousRandNum = randomNumber;
 
         transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
     }
@@ -28,10 +30,28 @@ public class targetRandomiser : MonoBehaviour
     {
         if (other.gameObject.tag == gameObject.tag)
         {
-            randomNumber = Random.Range(0, xPositions.Length);
+            RandomisePosition();
+        }
+    }
 
-            transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
+    public void RandomisePosition()
+    {
+        randomNumber = Random.Range(0, xPositions.Length);
+
+        if(randomNumber == previousRandNum)
+        {
+            if(randomNumber == xPositions.Length)
+            {
+                randomNumber--; 
+            } else
+            {
+                randomNumber++; 
+            }
         }
 
+       previousRandNum = randomNumber;
+
+        transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
     }
+
 }

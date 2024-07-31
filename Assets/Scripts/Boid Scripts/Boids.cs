@@ -28,7 +28,10 @@ public class Boid : MonoBehaviour
     // Cached
     Material material;
     Transform cachedTransform;
-    Transform target;
+    public Transform target;
+
+    public float minSpeed;
+    public float maxSpeed;
 
     void Awake()
     {
@@ -38,13 +41,13 @@ public class Boid : MonoBehaviour
 
     public void Initialize(BoidSettings settings, Transform target)
     {
-        this.target = target;
+        //this.target = target;
         this.settings = settings;
 
         position = cachedTransform.position;
         forward = cachedTransform.forward;
 
-        float startSpeed = (settings.minSpeed + settings.maxSpeed) / 2;
+        float startSpeed = (minSpeed + maxSpeed) / 2;
         velocity = transform.forward * startSpeed;
     }
 
@@ -91,7 +94,7 @@ public class Boid : MonoBehaviour
         velocity += acceleration * Time.deltaTime;
         float speed = velocity.magnitude;
         Vector3 dir = velocity / speed;
-        speed = Mathf.Clamp(speed, settings.minSpeed, settings.maxSpeed);
+        speed = Mathf.Clamp(speed, minSpeed, maxSpeed);
         velocity = dir * speed;
 
         cachedTransform.position += velocity * Time.deltaTime;

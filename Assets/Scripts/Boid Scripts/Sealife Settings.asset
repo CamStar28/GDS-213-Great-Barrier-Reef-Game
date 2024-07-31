@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75480cd1c61694945bf81e8a6e4cdbd5, type: 3}
-  m_Name: PotatoCodBoids
+  m_Name: Sealife Settings
   m_EditorClassIdentifier: 
   minSpeed: 2
   maxSpeed: 5
   perceptionRadius: 2.5
   avoidanceRadius: 1
   maxSteerForce: 3
-  alignWeight: 1
-  cohesionWeight: 1
-  seperateWeight: 1
-  targetWeight: 1
+  alignWeight: 0
+  cohesionWeight: 0
+  seperateWeight: 5
+  targetWeight: 10
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64

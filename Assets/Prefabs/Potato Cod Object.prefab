@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8220566895183646552}
   - component: {fileID: 303606728948516605}
   - component: {fileID: 5059963655121680050}
-  - component: {fileID: 2227031019289882407}
   - component: {fileID: 3055650146244507078}
   m_Layer: 0
   m_Name: Potato Cod Object
@@ -136,18 +135,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2227031019289882407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3102026151817861697}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b113f86f4b3b5f4c86df067ac03c9f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &3055650146244507078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +153,4 @@ MonoBehaviour:
   avgAvoidanceHeading: {x: 0, y: 0, z: 0}
   centreOfFlockmates: {x: 0, y: 0, z: 0}
   numPerceivedFlockmates: 0
+  target: {fileID: 0}
