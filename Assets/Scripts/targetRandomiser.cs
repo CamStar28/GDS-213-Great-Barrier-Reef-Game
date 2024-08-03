@@ -49,7 +49,7 @@ public class targetRandomiser : MonoBehaviour
             }
         }
 
-       previousRandNum = randomNumber;
+        previousRandNum = randomNumber;
 
         transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
     }

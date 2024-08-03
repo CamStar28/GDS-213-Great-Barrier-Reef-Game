@@ -14,7 +14,7 @@ public class cameraController : MonoBehaviour
     public GameObject humpbackWhaleImage;
     public GameObject mantaRayImage;
 
-    public GameObject potatoCodBio; 
+    public GameObject potatoCodBio;
     public GameObject greenTurtleBio;
     public GameObject giantClamBio;
     public GameObject whaleSharkBio;
@@ -23,18 +23,18 @@ public class cameraController : MonoBehaviour
     public GameObject humpbackWhaleBio;
     public GameObject mantaRayBio;
 
-    public SpriteRenderer flashRenderer; 
-    
+    public SpriteRenderer flashRenderer;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private void OnEnable()
@@ -54,46 +54,58 @@ public class cameraController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "PotatoCod")
+        if (other.gameObject.tag == "PotatoCod" && potatoCodImage != null)
         {
             potatoCodImage.SetActive(true);
             //Debug.Log("fish wit da LIPS");
 
-            potatoCodBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
+            potatoCodBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
-        } else if (other.gameObject.tag == "GreenTurtle")
+        }
+        else if (other.gameObject.tag == "GreenTurtle" && greenTurtleImage != null)
         {
             greenTurtleImage.SetActive(true);
             //Debug.Log("I spent hours of my life stomping... KOOPAS");
 
             greenTurtleBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
-        } else if (other.gameObject.tag == "MaoriWrasse")
+        }
+        else if (other.gameObject.tag == "MaoriWrasse" && maoriWrasseImage != null)
         {
             maoriWrasseImage.SetActive(true);
 
-            maoriWrasseBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
-        } else if (other.gameObject.tag == "GiantClam")
+            maoriWrasseBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+
+        }
+        else if (other.gameObject.tag == "GiantClam" && giantClamImage != null)
         {
             giantClamImage.SetActive(true);
 
             giantClamBio.gameObject.GetComponent<fishBioController>().UnlockBio();
-        } else if (other.gameObject.tag == "Clownfish")
+
+        }
+        else if (other.gameObject.tag == "Clownfish" && clownfishImage != null)
         {
             clownfishImage.SetActive(true);
 
             clownfishBio.gameObject.GetComponent<fishBioController>().UnlockBio();
-        } else if (other.gameObject.tag == "MantaRay")
+
+        }
+        else if (other.gameObject.tag == "MantaRay" && mantaRayImage != null)
         {
             mantaRayImage.SetActive(true);
 
             mantaRayBio.gameObject.GetComponent<fishBioController>().UnlockBio();
-        } else if (other.gameObject.tag == "WhaleShark")
+
+        }
+        else if (other.gameObject.tag == "WhaleShark" && whaleSharkImage != null)
         {
             whaleSharkImage.SetActive(true);
 
-            whaleSharkBio.gameObject.GetComponent<fishBioController>().UnlockBio(); 
-        } else if (other.gameObject.tag == "HumpbackWhale")
+            whaleSharkBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+
+        }
+        else if (other.gameObject.tag == "HumpbackWhale" && humpbackWhaleImage != null)
         {
             humpbackWhaleImage.SetActive(true);
 
