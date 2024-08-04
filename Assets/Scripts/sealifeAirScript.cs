@@ -24,10 +24,10 @@ public class sealifeAirScript : MonoBehaviour
 
         if(surfaceTimer > timerEndRandom)
         {
-            sealifeTarget.transform.position = new Vector3(0, 201, 0);
+            sealifeTarget.transform.position = new Vector3(0, 51, 0);
         }
 
-        if(Mathf.Round(transform.position.y) == 200)
+        if(Mathf.Round(transform.position.y) == 50)
         {
             StartCoroutine(BreatheAndDive());
             //Debug.Log("air refill yummy");

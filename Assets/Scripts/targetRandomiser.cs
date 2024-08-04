@@ -40,7 +40,7 @@ public class targetRandomiser : MonoBehaviour
 
         if(randomNumber == previousRandNum)
         {
-            if(randomNumber == xPositions.Length)
+            if(randomNumber >= xPositions.Length)
             {
                 randomNumber--; 
             } else
@@ -51,6 +51,7 @@ public class targetRandomiser : MonoBehaviour
 
         previousRandNum = randomNumber;
 
+        //transform.position = new Vector3(xPositions[randomNumber] + Random.Range(-5, 5), yPositions[randomNumber] + Random.Range(-5, 5), 0); //Version with slight target randomness
         transform.position = new Vector3(xPositions[randomNumber], yPositions[randomNumber], 0);
     }
 

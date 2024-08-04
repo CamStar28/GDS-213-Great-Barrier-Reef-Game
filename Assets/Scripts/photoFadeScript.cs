@@ -22,7 +22,7 @@ public class photoFadeScript : MonoBehaviour
 
     IEnumerator FadeAway()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
 
         Color c = photoRenderer.color;
         for (float alpha = 1f; alpha >= 0; alpha -= 0.01f)
