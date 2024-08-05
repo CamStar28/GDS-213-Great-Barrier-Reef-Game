@@ -40,12 +40,14 @@ public class targetRandomiser : MonoBehaviour
 
         if(randomNumber == previousRandNum)
         {
-            if(randomNumber >= xPositions.Length)
+            if(randomNumber >= xPositions.Length - 1)
             {
-                randomNumber--; 
+                randomNumber--;
+                Debug.Log("down the array");
             } else
             {
-                randomNumber++; 
+                randomNumber++;
+                Debug.Log("up the array");
             }
         }
 

@@ -30,13 +30,13 @@ public class playerController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
             {
-                playerBody.velocity = new Vector3(0, 3, 0);
+                playerBody.velocity = new Vector3(0, 5, 0);
                 //Debug.Log("going up?"); 
             }
 
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
             {
-                playerBody.velocity = new Vector3(5, -0.5f, 0);
+                playerBody.velocity = new Vector3(7, -0.5f, 0);
                 isFacingRight = true;
                 //Debug.Log("right away"); 
 
@@ -45,7 +45,7 @@ public class playerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
             {
-                playerBody.velocity = new Vector3(-5, -0.5f, 0);
+                playerBody.velocity = new Vector3(-7, -0.5f, 0);
                 isFacingRight = false;
                 //Debug.Log("the radical left");
 
@@ -54,7 +54,7 @@ public class playerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
-                playerBody.velocity = new Vector3(5, 3, 0);
+                playerBody.velocity = new Vector3(7, 5, 0);
                 isFacingRight = true;
 
                 cameraFlash.GetComponent<cameraController>().SpriteFaceRight();
@@ -62,7 +62,7 @@ public class playerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.UpArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.A))
             {
-                playerBody.velocity = new Vector3(-5, 3, 0);
+                playerBody.velocity = new Vector3(-7, 5, 0);
                 isFacingRight = false;
 
                 cameraFlash.GetComponent<cameraController>().SpriteFaceLeft();
@@ -70,13 +70,13 @@ public class playerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
             {
-                playerBody.velocity = new Vector3(0, -5, 0);
+                playerBody.velocity = new Vector3(0, -7, 0);
                 //Debug.Log("down"); 
             }
 
             if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.D))
             {
-                playerBody.velocity = new Vector3(5, -5, 0);
+                playerBody.velocity = new Vector3(7, -7, 0);
                 isFacingRight = true;
 
                 cameraFlash.GetComponent<cameraController>().SpriteFaceRight();
@@ -84,7 +84,7 @@ public class playerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.S) && Input.GetKey(KeyCode.A))
             {
-                playerBody.velocity = new Vector3(-5, -5, 0);
+                playerBody.velocity = new Vector3(-7, -7, 0);
                 isFacingRight = false;
 
                 cameraFlash.GetComponent<cameraController>().SpriteFaceLeft();

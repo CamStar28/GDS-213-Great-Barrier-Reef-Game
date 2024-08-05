@@ -7,6 +7,7 @@ public class sealifeAirScript : MonoBehaviour
 
     public float surfaceTimer;
     public float timerEndRandom;
+    public float surfaceTargetRandom; 
 
     public GameObject sealifeTarget;     
     
@@ -15,6 +16,7 @@ public class sealifeAirScript : MonoBehaviour
     {
         surfaceTimer = 0;
         timerEndRandom = Random.Range(300, 600);
+        surfaceTargetRandom = Random.Range(-35, 10);
     }
 
     // Update is called once per frame
@@ -24,7 +26,7 @@ public class sealifeAirScript : MonoBehaviour
 
         if(surfaceTimer > timerEndRandom)
         {
-            sealifeTarget.transform.position = new Vector3(0, 51, 0);
+            sealifeTarget.transform.position = new Vector3(surfaceTargetRandom, 51, 0);
         }
 
         if(Mathf.Round(transform.position.y) == 50)
