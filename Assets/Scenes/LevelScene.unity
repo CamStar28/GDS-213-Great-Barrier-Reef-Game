@@ -2447,14 +2447,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xPositions:
   - 41
-  - 41
   - 38
   - 39
-  - 42
+  - 35
   yPositions:
   - 10
-  - 9.5
-  - 9
+  - 14
   - 11
   - 13
 --- !u!135 &171877123
@@ -2537,7 +2535,7 @@ Transform:
   m_GameObject: {fileID: 171877121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.08, y: 12.82, z: 0}
+  m_LocalPosition: {x: 38, y: 14.03, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -5347,7 +5345,7 @@ MonoBehaviour:
   numPerceivedFlockmates: 0
   target: {fileID: 171877126}
   minSpeed: 1
-  maxSpeed: 3
+  maxSpeed: 2
 --- !u!1 &418722738
 GameObject:
   m_ObjectHideFlags: 0
