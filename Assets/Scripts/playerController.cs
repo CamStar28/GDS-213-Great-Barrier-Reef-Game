@@ -13,7 +13,9 @@ public class playerController : MonoBehaviour
 
     public bool gameIsPaused; 
 
-    public bool isFacingRight; 
+    public bool isFacingRight;
+
+    public GameObject returnMenu; 
     
     // Start is called before the first frame update
     void Start()
@@ -107,13 +109,13 @@ public class playerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(isFishipediaOpen == false) 
+            if(isFishipediaOpen == false && gameIsPaused == false) 
             {
                 fishipediaMenu.SetActive(true);
                 isFishipediaOpen = true;
                 Time.timeScale = 0;
                 gameIsPaused = true;
-            } else
+            } else if(isFishipediaOpen == true)
             {
                 fishipediaMenu.SetActive(false);
                 isFishipediaOpen = false;
@@ -128,11 +130,8 @@ public class playerController : MonoBehaviour
             {
                 Time.timeScale = 0; 
                 gameIsPaused = true;
-            } else
-            {
-                Time.timeScale = 1; 
-                gameIsPaused = false;
-            }
+                StartCoroutine(returnMenu.GetComponent<returnMenuScript>().FadeIn());
+            } 
         }
 
 

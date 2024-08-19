@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class cameraController : MonoBehaviour
 {
@@ -23,12 +24,33 @@ public class cameraController : MonoBehaviour
     public GameObject humpbackWhaleBio;
     public GameObject mantaRayBio;
 
+    public bool potatoCodUnlocked;
+    public bool giantClamUnlocked;
+    public bool whaleSharkUnlocked;
+    public bool maoriWrasseUnlocked;
+    public bool clownfishUnlocked;
+    public bool humpbackWhaleUnlocked;
+    public bool mantaRayUnlocked;
+    public bool greenTurtleUnlocked;
+
+    public GameObject fullCompletionStar;
+    public TextMeshProUGUI fullCompletionText; 
+
     public SpriteRenderer flashRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
+        potatoCodUnlocked = false;
+        giantClamUnlocked = false;
+        whaleSharkUnlocked = false;
+        maoriWrasseUnlocked = false;
+        clownfishUnlocked = false;
+        humpbackWhaleUnlocked = false;
+        mantaRayUnlocked = false;
+        greenTurtleUnlocked = false;
 
+        fullCompletionStar.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,6 +83,7 @@ public class cameraController : MonoBehaviour
 
             potatoCodBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            potatoCodUnlocked = true;
         }
         else if (other.gameObject.tag == "GreenTurtle" && greenTurtleImage != null)
         {
@@ -69,12 +92,16 @@ public class cameraController : MonoBehaviour
 
             greenTurtleBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            greenTurtleUnlocked = true;
+
         }
         else if (other.gameObject.tag == "MaoriWrasse" && maoriWrasseImage != null)
         {
             maoriWrasseImage.SetActive(true);
 
             maoriWrasseBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+
+            maoriWrasseUnlocked = true;
 
         }
         else if (other.gameObject.tag == "GiantClam" && giantClamImage != null)
@@ -83,6 +110,7 @@ public class cameraController : MonoBehaviour
 
             giantClamBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            giantClamUnlocked = true;
         }
         else if (other.gameObject.tag == "Clownfish" && clownfishImage != null)
         {
@@ -90,6 +118,7 @@ public class cameraController : MonoBehaviour
 
             clownfishBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            clownfishUnlocked = true;
         }
         else if (other.gameObject.tag == "MantaRay" && mantaRayImage != null)
         {
@@ -97,6 +126,7 @@ public class cameraController : MonoBehaviour
 
             mantaRayBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            mantaRayUnlocked = true;
         }
         else if (other.gameObject.tag == "WhaleShark" && whaleSharkImage != null)
         {
@@ -104,13 +134,24 @@ public class cameraController : MonoBehaviour
 
             whaleSharkBio.gameObject.GetComponent<fishBioController>().UnlockBio();
 
+            whaleSharkUnlocked = true;
         }
         else if (other.gameObject.tag == "HumpbackWhale" && humpbackWhaleImage != null)
         {
             humpbackWhaleImage.SetActive(true);
 
             humpbackWhaleBio.gameObject.GetComponent<fishBioController>().UnlockBio();
+
+            humpbackWhaleUnlocked = true;
         }
+
+        if(potatoCodUnlocked == true && giantClamUnlocked == true && greenTurtleUnlocked == true && mantaRayUnlocked == true && maoriWrasseUnlocked == true && humpbackWhaleUnlocked == true && whaleSharkUnlocked == true && clownfishUnlocked == true && fullCompletionText != null)
+        {
+            fullCompletionStar.SetActive(true);
+
+            fullCompletionText.GetComponent<sentenceTypeScript>().StartTyping();
+        }
+
     }
 
     IEnumerator Fade()
