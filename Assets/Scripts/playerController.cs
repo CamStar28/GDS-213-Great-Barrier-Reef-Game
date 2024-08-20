@@ -15,7 +15,9 @@ public class playerController : MonoBehaviour
 
     public bool isFacingRight;
 
-    public GameObject returnMenu; 
+    public GameObject returnMenu;
+
+    public GameObject playerModel; 
     
     // Start is called before the first frame update
     void Start()
@@ -23,6 +25,8 @@ public class playerController : MonoBehaviour
         isFacingRight = true; 
         isFishipediaOpen = false;
         gameIsPaused = false;
+
+        playerModel.GetComponent<Animation>().Play("Take 001"); 
     }
 
     // Update is called once per frame
