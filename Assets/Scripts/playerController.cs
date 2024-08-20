@@ -17,7 +17,8 @@ public class playerController : MonoBehaviour
 
     public GameObject returnMenu;
 
-    public GameObject playerModel; 
+    public GameObject droneRight;
+    public GameObject droneLeft; 
     
     // Start is called before the first frame update
     void Start()
@@ -25,8 +26,6 @@ public class playerController : MonoBehaviour
         isFacingRight = true; 
         isFishipediaOpen = false;
         gameIsPaused = false;
-
-        playerModel.GetComponent<Animation>().Play("Take 001"); 
     }
 
     // Update is called once per frame
@@ -108,6 +107,19 @@ public class playerController : MonoBehaviour
                 {
                     cameraFlash.transform.position = new Vector3(transform.position.x - 2.5f, transform.position.y, transform.position.z);
                 }
+            }
+
+            if(isFacingRight == true)
+            {
+                droneLeft.SetActive(false); 
+                droneRight.SetActive(true);
+                //Debug.Log("facing right");
+
+            } else if (isFacingRight == false)
+            {
+                droneRight.SetActive(false);
+                droneLeft.SetActive(true);
+                //Debug.Log("facing left");
             }
         }
 
