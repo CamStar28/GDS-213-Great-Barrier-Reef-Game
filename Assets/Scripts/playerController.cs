@@ -18,7 +18,9 @@ public class playerController : MonoBehaviour
     public GameObject returnMenu;
 
     public GameObject droneRight;
-    public GameObject droneLeft; 
+    public GameObject droneLeft;
+
+    public AudioSource cameraSound; 
     
     // Start is called before the first frame update
     void Start()
@@ -98,6 +100,7 @@ public class playerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 cameraFlash.SetActive(true);
+                cameraSound.Play(0);
 
                 if (isFacingRight == true)
                 {
